@@ -19,13 +19,21 @@ COMMAND_REGEX = ///
 ///i
 
 
+response = (msg, task, error, body) ->
+  console.log(msg, task, error, body)
+  if (error)
+    msg.reply "Problem running #{task}: #{error}"
+  else
+    msg.reply "OK, I'm running #{task}. Logs are here: #{body.logs}"
+
 module.exports = (robot) ->
   robot.respond COMMAND_REGEX, (msg) ->
     task = msg.match[1]
     paramString = msg.match[2]
-    msg.reply "OK, I'm running #{task}"
     client.execute(
       task,
       config.servers(task),
       config.parseParams(task, paramString)
-    , (error, body) -> msg.reply(error, JSON.stringify(body)))
+      response,
+      (error, body) -> response(msg, task, error, body)
+    )

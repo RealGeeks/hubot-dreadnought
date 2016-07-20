@@ -20,7 +20,6 @@ COMMAND_REGEX = ///
 
 
 response = (msg, task, error, body) ->
-  console.log(msg, task, error, body)
   if (error)
     msg.reply "Problem running #{task}: #{error}"
   else
@@ -34,6 +33,6 @@ module.exports = (robot) ->
       task,
       config.servers(task),
       config.parseParams(task, paramString)
-      response,
-      (error, body) -> response(msg, task, error, body)
+      (error, body) ->
+        response(msg, task, error, body)
     )

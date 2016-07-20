@@ -28,4 +28,4 @@ module.exports = (robot) ->
       task,
       config.servers(task),
       config.parseParams(task, paramString)
-    , (error, body) -> msg.reply(body))
+    , (error, body) -> msg.reply(error, JSON.stringify(body)))

@@ -15,7 +15,7 @@ module.exports = class Client
         params: params
       }
     }, (error, response, body) ->
-      if error or response.statusCode != 200
+      if error or response.statusCode != 202
         callback(error)
         return
       callback(error, body)

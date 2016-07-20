@@ -1,0 +1,14 @@
+{
+  "remap_fields": {
+    "servers": [{"finder": "beanstalk", "params": {"selector": "first", "environment": "rope-prod"}}],
+    "params": {
+      "BOARD_ID": "int"
+    }
+  },
+  "do_the_twist": {
+    "servers": [{"finder": "beanstalk", "params": {"selector": "first", "environment": "rope-prod"}}],
+    "params": {
+      "style": "string"
+    }
+  }
+}

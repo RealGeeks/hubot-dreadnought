@@ -5,6 +5,7 @@ module.exports = class Client
 
   constructor: () ->
     @endpoint = process.env['HUBOT_DREADNOUGHT_ENDPOINT']
+    @api_key = process.env['HUBOT_DREADNOUGHT_API_KEY']
 
   handle_response: (error, response, body, callback) ->
     if error
@@ -20,6 +21,9 @@ module.exports = class Client
     request({
       uri: uri,
       method: "POST",
+      headers: {
+        'Authorization': @api_key
+      },
       json: {
         servers: servers,
         params: params,

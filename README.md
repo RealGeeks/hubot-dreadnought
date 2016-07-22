@@ -11,6 +11,7 @@
 Set these env vars:
 
   * HUBOT_DREADNOUGHT_ENDPOINT
+  * HUBOT_DREADNOUGHT_API_KEY
   * HUBOT_DREADNOUGHT_JSON
 
 You will need a dreadnought.json.  Here is an example:

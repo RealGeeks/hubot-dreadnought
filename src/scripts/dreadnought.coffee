@@ -33,6 +33,7 @@ module.exports = (robot) ->
       task,
       config.servers(task),
       config.parseParams(task, paramString)
+      msg.message.user.name,
       (error, body) ->
         response(msg, task, error, body)
     )

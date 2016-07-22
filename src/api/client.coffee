@@ -15,7 +15,7 @@ module.exports = class Client
       return
     return callback(error, body)
 
-  execute: (task, servers, params, username, callback) ->
+  execute: (task, servers, params, username, room, callback) ->
     uri = url.resolve(@endpoint, "/execute/start/#{task}/")
     request({
       uri: uri,
@@ -26,6 +26,7 @@ module.exports = class Client
         initiator: {
           type: 'hubot',
           username: username
+          room: room
         }
       }
     }, (error, response, body) =>

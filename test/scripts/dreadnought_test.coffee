@@ -10,7 +10,7 @@ Promise = require('bluebird')
 fakeClient = (error, response) ->
 
   class FakeClient
-    execute: (task, servers, params, username, callback) ->
+    execute: (task, servers, params, username, room, callback) ->
       callback(error, response)
 
   mockrequire('../../src/api/client', FakeClient)

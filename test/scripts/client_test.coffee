@@ -15,7 +15,7 @@ describe 'client', ->
                     logs: 'http://whatever'
                   })
     client = new Client()
-    client.execute('foo', [], {}, '', (error, body) ->
+    client.execute('foo', [], {}, '', '', (error, body) ->
       expect(error).to.be.a('null')
       expect(body).to.eql({
         'status': 'OK',
@@ -29,7 +29,7 @@ describe 'client', ->
                   .post('/execute/start/foo/')
                   .reply(404)
     client = new Client()
-    client.execute('foo', [], {}, '', (error, body) ->
+    client.execute('foo', [], {}, '', '', (error, body) ->
       expect(error).to.equal('endpoint returned 404')
       done()
     )

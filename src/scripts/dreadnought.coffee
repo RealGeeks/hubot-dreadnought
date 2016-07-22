@@ -34,6 +34,7 @@ module.exports = (robot) ->
       config.servers(task),
       config.parseParams(task, paramString)
       msg.message.user.name,
+      msg.envelope.room,
       (error, body) ->
         response(msg, task, error, body)
     )

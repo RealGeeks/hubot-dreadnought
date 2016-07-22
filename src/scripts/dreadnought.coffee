@@ -29,6 +29,7 @@ module.exports = (robot) ->
   robot.respond COMMAND_REGEX, (msg) ->
     task = msg.match[1]
     paramString = msg.match[2]
+    console.log('params are', paramString)
     client.execute(
       task,
       config.servers(task),

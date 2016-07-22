@@ -6,6 +6,7 @@
 
 Config = require "../api/parser"
 Client = require "../api/client"
+util   = require "util"
 
 config = new Config()
 client = new Client()
@@ -30,6 +31,7 @@ module.exports = (robot) ->
     task = msg.match[1]
     paramString = msg.match[2]
     console.log('params are', paramString)
+    console.log('msg is', util.inspect(msg))
     client.execute(
       task,
       config.servers(task),

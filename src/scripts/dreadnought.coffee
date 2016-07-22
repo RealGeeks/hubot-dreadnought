@@ -24,14 +24,12 @@ response = (msg, task, error, body) ->
   if (error)
     msg.reply "Problem running #{task}: #{error}"
   else
-    msg.reply "OK, I'm running #{task}. Logs are here: #{body.logs}"
+    msg.reply "OK, I'm running <#{task}|#{body.logs}>"
 
 module.exports = (robot) ->
   robot.respond COMMAND_REGEX, (msg) ->
     task = msg.match[1]
     paramString = msg.match[2]
-    console.log('params are', paramString)
-    console.log('msg is', util.inspect(msg))
     client.execute(
       task,
       config.servers(task),

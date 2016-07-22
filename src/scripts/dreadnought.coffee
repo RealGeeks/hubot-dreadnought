@@ -24,7 +24,7 @@ response = (msg, task, error, body) ->
   if (error)
     msg.reply "Problem running #{task}: #{error}"
   else
-    msg.reply "OK, I'm running <#{task}|#{body.logs}>"
+    msg.reply "OK, I'm running <#{body.logs}|#{task}>"
 
 module.exports = (robot) ->
   robot.respond COMMAND_REGEX, (msg) ->

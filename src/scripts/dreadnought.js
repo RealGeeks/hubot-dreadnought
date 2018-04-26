@@ -16,6 +16,8 @@ module.exports = robot => {
     const task = msg.match[2];
     const paramString = msg.match[3];
 
+    console.debug(paramString);
+
     getParser()
       .then(parser => {
         client.execute(

@@ -42,8 +42,6 @@ const Client = class Client {
         }
       );
 
-      console.debug('Dreadnought response', response.body);
-
       this.handleResponse(null, response.statusCode, response.body, cb);
     } catch (er) {
       this.handleResponse(er, null, null, cb);

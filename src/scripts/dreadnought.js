@@ -12,11 +12,9 @@ const response = function (msg, task, error, body) {
 };
 
 module.exports = robot => {
-  robot.respond(/(run|dread)\s(\w+)\s(.*)$/i, function (msg) {
+  robot.respond(/(run|dread)\s(\w+)\s*(.*)$/i, function (msg) {
     const task = msg.match[2];
     const paramString = msg.match[3];
-
-    console.debug(paramString);
 
     getParser()
       .then(parser => {

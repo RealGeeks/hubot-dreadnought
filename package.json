@@ -1,29 +1,30 @@
 {
   "name": "hubot-dreadnought",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Kevin McCarthy <me@kevinmccarthy.org>",
   "description": "Trigger commands on dreadnought",
-  "main": "index.coffee",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/RealGeeks/hubot-dreadnought"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha test/**/*_test.coffee",
-    "posttest": "NODE_ENV=test coffeelint -f .coffeelint.json src/"
+    "test": "NODE_ENV=test mocha test/**/*_test.js"
   },
   "devDependencies": {
-    "bluebird": "^3.4.1",
+    "babel-eslint": "^8.2.3",
     "chai": "^3.5.0",
     "co": "^4.6.0",
-    "coffee-script": "^1.10.0",
-    "coffeelint": "^1.15.7",
+    "eslint": "^4.19.1",
+    "eslint-config-coderiety": "^1.1.0",
+    "eslint-plugin-react": "^7.7.0",
     "hubot-test-helper": "^1.4.4",
     "mocha": "^2.5.3",
     "mock-require": "^1.3.0",
     "nock": "^8.0.0"
   },
   "dependencies": {
-    "request": "^2.73.0"
+    "got": "^8.3.0",
+    "minimist": "^1.2.0"
   }
 }

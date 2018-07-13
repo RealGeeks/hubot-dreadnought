@@ -1,4 +1,10 @@
 // Description:
+//   Runs Dreadnaught tasks in Elastic Beanstalk environments. Manage tasks
+//   directly in Dreadnaught.
+//
+// Commands:
+//   geekbot dread|run <task-slug> - Runs the <task> with Dreadnought.
+
 const Client = require('../api/client');
 const client = new Client();
 const getParser = require('../api/parser');

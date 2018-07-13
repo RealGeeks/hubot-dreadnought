@@ -3,6 +3,7 @@ const {expect} = require('chai');
 const Client = require('../../src/api/client');
 
 describe('client', function () {
+  before(() => !nock.isActive() && nock.activate());
   after(() => nock.restore());
 
   it('should make a request', function (done) {

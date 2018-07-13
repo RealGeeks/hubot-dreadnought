@@ -9,7 +9,7 @@
     "url": "https://github.com/RealGeeks/hubot-dreadnought"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha test/**/*_test.js"
+    "test": "mocha -t 100000 test/**/*_test.js"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -20,6 +20,7 @@
     "eslint-plugin-react": "^7.7.0",
     "hubot-test-helper": "^1.4.4",
     "mocha": "^5.1.1",
+    "mock-require": "^3.0.2",
     "nock": "^9.2.5"
   },
   "dependencies": {

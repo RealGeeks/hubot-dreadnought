@@ -1,5 +1,5 @@
 const nock = require('nock');
-const Parser = require('../../src/api/parser');
+const getParser = require('../../src/api/parser');
 const {expect} = require('chai');
 
 const testData = {
@@ -33,12 +33,16 @@ const testData = {
 };
 
 describe('parsing command params', function () {
-  beforeEach(async () => {
+  before(() => {
+    if (!nock.isActive()) nock.activate();
+
     nock(process.env.HUBOT_DREADNOUGHT_ENDPOINT)
       .get('/tasks/discover/')
       .reply(200, testData);
 
-    this.config = await Parser();
+    return getParser()
+      .then(parser => (this.config = parser))
+      .catch(er => console.error(er));
   });
 
   after(() => nock.restore());

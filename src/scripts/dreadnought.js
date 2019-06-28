@@ -24,6 +24,13 @@ module.exports = robot => {
 
     getParser()
       .then(parser => {
+        const tasks = parser.appNames();
+
+        if (!tasks[task]) {
+          response(msg, task, 'no such task');
+          return;
+        }
+
         client.execute(
           task,
           parser.servers(task),

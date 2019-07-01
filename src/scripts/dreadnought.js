@@ -8,6 +8,7 @@
 const Client = require('../api/client');
 const client = new Client();
 const getParser = require('../api/parser');
+const _ = require('lodash');
 
 const response = function (msg, task, error, body) {
   if (error) {
@@ -26,7 +27,7 @@ module.exports = robot => {
       .then(parser => {
         const tasks = parser.appNames();
 
-        if (!tasks[task]) {
+        if (!tasks.includes(task)) {
           response(msg, task, 'no such task');
           return;
         }

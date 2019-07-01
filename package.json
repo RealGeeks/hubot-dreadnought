@@ -1,6 +1,6 @@
 {
   "name": "hubot-dreadnought",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Kevin McCarthy <me@kevinmccarthy.org>",
   "description": "Trigger commands on dreadnought",
   "main": "index.js",
